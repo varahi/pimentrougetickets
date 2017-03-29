@@ -1,0 +1,96 @@
+    <td>     
+    	<f:if condition="{ticket.uid}">
+				<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+				additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+				pageUid="{settings.detailPageUid}" class="modal-link"
+				title="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.view_and_answer')}" rel="tooltip">		
+        	{ticket.uid}   
+         </f:link.page>   
+         
+         <f:if condition="{ticket.answer}">
+        	<span class="badge green-badge align-center" title="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.number_of_answers')}" rel="tooltip">
+        		{ticket.numberOfAnswers}
+        	</span>         
+         </f:if>           
+    	</f:if>
+     </td>
+    <td>
+    
+    	<f:if condition="{ticket.title}">
+				<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+				additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+				pageUid="{settings.detailPageUid}" class="modal-link">
+      		{ticket.title}
+      	</f:link.page>
+    	</f:if>
+    </td>
+    <td>
+    	<f:if condition="{ticket.project}">
+				<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+				additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+				pageUid="{settings.detailPageUid}" class="modal-link">
+      		{ticket.project}
+      	</f:link.page>    	
+    	</f:if>
+    </td>
+    <td>
+    	<f:if condition="{ticket.description}">
+    		<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+				additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+				pageUid="{settings.detailPageUid}" class="modal-link">
+    			<f:format.crop maxCharacters="50" append="&nbsp;...">{ticket.description}</f:format.crop>
+    		</f:link.page>
+    	</f:if>
+    </td>
+    
+    <td>
+    	<f:if condition="{ticket.category}">
+    		<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+				additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+				pageUid="{settings.detailPageUid}" class="modal-link">
+    			<f:format.crop maxCharacters="50" append="&nbsp;...">{ticket.category.title}</f:format.crop>
+    		</f:link.page>
+    	</f:if>
+    </td>    
+    
+    <td>
+    	<f:if condition="{ticket.priority}">
+    <f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+				additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+				pageUid="{settings.detailPageUid}" class="modal-link">
+      {ticket.priority.title}
+      </f:link.page>
+      </f:if>
+    </td>
+    
+    <td>
+    <f:if condition="{ticket.cost}">
+    <f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+				additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+				pageUid="{settings.detailPageUid}" class="modal-link">
+      {ticket.cost}
+      </f:link.page>
+      </f:if>
+    </td>    
+        
+    <td>
+    	<span class="list-date">
+    		<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+				additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+				pageUid="{settings.detailPageUid}" class="modal-link">
+      		<f:format.date format="d/m/Y">{ticket.createDate}</f:format.date>
+      	</f:link.page>
+      </span>
+    </td> 
+    
+    <f:if condition="{ticket.status.uid} == {settings.closedTicket}">
+    	<td>
+    		<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+				additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+				pageUid="{settings.detailPageUid}" class="modal-link">    	
+    			<f:format.date format="d/m/Y">{ticket.tstamp}</f:format.date>
+    		</f:link.page>
+    	</td>
+    </f:if>   
+
+  

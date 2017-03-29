@@ -1,0 +1,41 @@
+{namespace p=PimentRouge\Pimentrougetickets\ViewHelpers}
+							
+<label for="answer">
+	<f:translate key="tx_pimentrougetickets_domain_model_answer.answer" />
+	<span class="required">*</span>	
+</label>
+
+<br />
+(<span id="pres-max-length">1000</span> {f:translate(key: 'tx_pimentrougetickets.error.characters_left')})	
+<textarea rows="4" placeholder="{f:translate(key: 'tx_pimentrougetickets_domain_model_answer.answer')}" 
+	required="required" 
+	data-validation="length" 
+	data-validation-length="2-1000"
+	data-validation-error-msg="{f:translate(key: 'tx_pimentrougetickets.error.required')}"
+	id="answer" class="ticket-form-control" 
+	name="tx_pimentrougetickets_pimentrougetickets[newAnswer][answer]">
+</textarea><br />
+
+<label for="image">
+	<f:translate key="tx_pimentrougetickets_domain_model_ticket.image" />
+</label>
+<br />
+
+<input type="file" id="file-input" name="tx_pimentrougetickets_pimentrougetickets[newAnswer][image]" 
+		 data-validation="mime size" 
+		 data-validation-allowing="pdf, jpg, png, gif, txt"  
+		 data-validation-max-size="5M" type="file"
+		 data-validation-error-msg-mime="{f:translate(key: 'tx_pimentrougetickets.error.you_can_upload')}">
+<br />	
+
+	
+<!-- <label for="image">
+	<f:translate key="tx_pimentrougetickets_domain_model_ticket.image" />
+</label><br />
+
+<p:form.upload property="image" >
+  <f:if condition="{resource}">
+    <f:image id="image" class="img-responsive" image="{resource}" alt="" /><br />
+  </f:if>
+</p:form.upload><br />	-->
+

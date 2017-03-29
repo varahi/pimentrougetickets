@@ -1,0 +1,47 @@
+<f:layout name="Default" />
+<f:section name="main">
+<f:flashMessages />
+
+<div class="modal-content">
+<f:render partial="FormErrors" arguments="{object:Ticket}" />	
+
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#10006;</button>
+			<h1><f:translate key="tx_pimentrougetickets_domain_model_ticket.edit_ticket" /> {ticket.uid}</h1>
+	</div>
+	
+	<div class="modal-body">	
+		<h4>{ticket.title}</h4>	
+						
+	<f:if condition="{ticket.image}">
+		<div class="ticket-detail__inf0-block ticket-detail__img">
+			<f:image class="img-responsive" src="{ticket.image.originalResource.originalFile.uid}" alt="{titcket.title}" width="566c" />		
+		</div><br />	
+		
+		<div class="ticket-detail__download-link">
+			<b><f:translate key="tx_pimentrougetickets_domain_model_ticket.file_download" /></b>									
+			<a href="{ticket.image.originalResource.publicUrl}" target="_blank">{ticket.image.originalResource.originalFile.name}</a>						
+		</div>			
+	</f:if>
+
+  <f:security.ifHasRole role="{settings.adminGroup}">  
+  	<div class="answer-text-area">
+			<f:form id="form" action="update" controller="Ticket" enctype="multipart/form-data" name="ticket" 
+			object="{ticket}" arguments="{user:user}">		
+				<div class="ticket-detail__edit-fields">
+					<f:render partial="Ticket/EditFormFields" arguments="{_all}" />
+				</div>
+  			<f:form.submit value="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.update')}" class="btn btn-primary" />
+  		</f:form>   	
+  	</div>
+  </f:security.ifHasRole>			
+	</div>
+	
+	<div class="modal-footer">
+ 		<button type="button" class="btn btn-default" data-dismiss="modal">
+ 			<f:translate key="tx_pimentrougetickets.modal.close" />
+ 		</button>
+	</div>
+</div>
+	
+</f:section>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-04-28T09:44:49Z" product-name="pimentrougetickets">
+		<header/>
+		<body>
+			<trans-unit id="tx_pimentrougetickets_domain_model_user">
+				<source>User</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_user.username">
+				<source>Username</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_user.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_user.first_name">
+				<source>First Name</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_user.last_name">
+				<source>Last Name</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_user.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_user.ticket">
+				<source>Ticket</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_user.answer">
+				<source>Answer</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_user.message">
+				<source>Message</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_ticket">
+				<source>Ticket</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_ticket.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_ticket.project">
+				<source>Project</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_ticket.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_ticket.file">
+				<source>File</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_ticket.cost">
+				<source>Cost</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_ticket.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_ticket.priority">
+				<source>Priority</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_ticket.status">
+				<source>Status</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_ticket.user">
+				<source>User</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_ticket.answer">
+				<source>Answer</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_ticket.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_category.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_category.ticket">
+				<source>Ticket</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_priority">
+				<source>Priority</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_priority.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_priority.ticket">
+				<source>Ticket</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_status">
+				<source>Status</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_status.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_status.ticket">
+				<source>Ticket</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_answer">
+				<source>Answer</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_answer.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_answer.answer">
+				<source>Answer</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_answer.file">
+				<source>File</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_answer.ticket">
+				<source>Ticket</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_answer.user">
+				<source>User</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_answer.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_message">
+				<source>Message</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_message.subject">
+				<source>Subject</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_message.message">
+				<source>Message</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_message.create_date">
+				<source>Create Date</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_message.user">
+				<source>User</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_message.sender">
+				<source>Sender</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_message.recipient">
+				<source>Recipient</source>
+			</trans-unit>
+			<trans-unit id="tx_pimentrougetickets_domain_model_filereference">
+				<source>File Reference</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

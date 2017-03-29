@@ -1,0 +1,37 @@
+<f:layout name="Default" />
+<f:section name="main">
+<f:flashMessages />
+	
+<div class="modal-content">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#10006;</button>
+			<h1><f:translate key="tx_pimentrougetickets_domain_model_ticket.new" /></h1>
+	</div>
+	
+	<div class="modal-body">					
+		<f:render partial="FormErrors" arguments="{object:Ticket}" />	
+					 
+		<f:form id="fileupload" action="create" additionalAttributes="{data-toggle : 'validator', role : 'form'}" 
+		enctype="multipart/form-data"  name="newTicket" object="{newTicket}" arguments="{user:user}">
+			<f:render partial="Ticket/CreateFormFields" arguments="{_all}" />
+			<f:form.submit class="btn btn-primary" value="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.create')}" />		
+			<div class="help-block with-errors"></div>
+		</f:form>
+	
+	</div>
+	<div class="modal-footer">
+ 		<button type="button" class="btn btn-default" data-dismiss="modal">
+ 			<f:translate key="tx_pimentrougetickets.modal.close" />
+ 		</button>
+	</div>
+</div>	
+
+<script>
+$.validate({
+	  form : '#fileupload',
+	  modules : 'file',
+	 });
+$('#description').restrictLength( $('#pres-max-length') );
+</script>
+
+</f:section>

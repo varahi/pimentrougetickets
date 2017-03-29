@@ -1,0 +1,51 @@
+{namespace p=PimentRouge\Pimentrougetickets\ViewHelpers}
+
+<div class="ticket-detail">	
+	<f:if condition="{ticket.description}">
+		<div class="ticket-detail__inf0-block">
+			<h4><f:translate key="tx_pimentrougetickets_domain_model_ticket.description" /></h4>
+			<f:format.nl2br>{ticket.description}</f:format.nl2br>
+		</div>	
+	</f:if>
+	
+	<f:if condition="{ticket.image}">
+		<div class="ticket-detail__inf0-block ticket-detail__img">
+			<h4><f:translate key="tx_pimentrougetickets_domain_model_ticket.image" /></h4>
+			<f:image class="img-responsive" src="{ticket.image.originalResource.originalFile.uid}" alt="{titcket.title}" width="566c" />		
+		</div><br />	
+		
+		<div class="ticket-detail__download-link">
+			<b><f:translate key="tx_pimentrougetickets_domain_model_ticket.file_download" /></b>									
+			<a href="{ticket.image.originalResource.publicUrl}" target="_blank">{ticket.image.originalResource.originalFile.name}</a>						
+		</div>			
+	</f:if>
+	
+	<f:if condition="{ticket.date}">
+		<div class="ticket-detail__inf0-block">
+			<h4><f:translate key="tx_pimentrougetickets_domain_model_ticket.date" /></h4>
+			<f:format.date format="d.m.Y - H:i:s">{ticket.date}</f:format.date>
+		</div>		
+	</f:if>
+
+	<f:if condition="{ticket.category}">
+		<div class="ticket-detail__inf0-block">
+			<h4><f:translate key="tx_pimentrougetickets_domain_model_ticket.category" /></h4>
+			{ticket.category.title}
+		</div>	
+	</f:if>
+	
+	<f:if condition="{ticket.priority}">
+		<div class="ticket-detail__inf0-block">
+			<h4><f:translate key="tx_pimentrougetickets_domain_model_ticket.priority" /></h4>
+			{ticket.priority.title}
+		</div>	
+	</f:if>	
+	
+	<f:if condition="{ticket.cost}">
+		<div class="ticket-detail__inf0-block">
+			<h4><f:translate key="tx_pimentrougetickets_domain_model_ticket.cost" /></h4>
+			{ticket.cost}
+		</div>	
+	</f:if>
+				
+</div>

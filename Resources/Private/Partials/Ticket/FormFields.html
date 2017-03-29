@@ -1,0 +1,59 @@
+{namespace p=PimentRouge\Pimentrougetickets\ViewHelpers}
+
+<f:form.hidden name="newTicket[status]" value="{settings.defaultTicketStatus}" />
+<f:form.hidden name="newTicket[admin]" value="{settings.defaultAdminUid}" />
+
+<f:form.textfield property="title" class="form-control" required="required" 
+placeholder="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.title')}" /><br />
+
+<f:form.textfield property="project" class="form-control" 
+placeholder="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.project')}"  /><br />
+
+<f:form.textarea class="form-control"property="description" rows="4" 
+	placeholder="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.description')}" /><br />
+
+<label for="image">
+	<f:translate key="tx_pimentrougetickets_domain_model_ticket.image" />
+</label><br />
+
+<p:form.upload property="image" >
+  <f:if condition="{resource}">
+    <f:image id="image" class="img-responsive" image="{resource}" alt="" /><br />
+  </f:if>
+</p:form.upload><br />
+
+<f:security.ifHasRole role="{settings.adminGroup}">
+	<f:form.textfield property="cost" class="form-control" 
+		placeholder="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.cost')}" /><br />
+</f:security.ifHasRole>
+
+<div class="select-outer form-group">
+<label class="col-sm-12 control-label"><f:translate key="tx_pimentrougetickets_domain_model_category" /></label>
+<f:form.select class="form-control" property="category" name="category" options="{category}" 
+  optionLabelField="title" 
+  optionValueField="uid"  />
+</div>  
+
+<div class="select-outer form-group">
+<label class="col-sm-12 control-label"><f:translate key="tx_pimentrougetickets_domain_model_priority" /></label>
+<f:form.select class="form-control" property="priority" name="priority" options="{priority}" 
+  optionLabelField="title" 
+  optionValueField="uid"  />
+</div> 
+
+<div class="select-outer form-group">
+<label class="col-sm-12 control-label"><f:translate key="tx_pimentrougetickets_domain_model_ticket.admin" /></label>
+<f:form.select class="form-control" property="admin" name="admin" options="{admin}" 
+  optionLabelField="username" 
+  optionValueField="uid"  />
+</div> 
+
+<f:security.ifHasRole role="{settings.adminGroup}">
+	<div class="select-outer form-group">
+		<label class="col-sm-12 control-label"><f:translate key="tx_pimentrougetickets_domain_model_status" /></label>
+		<f:form.select class="form-control" property="status" name="status" options="{status}" 
+  		optionLabelField="title" 
+  		optionValueField="uid"  />
+	</div>  
+</f:security.ifHasRole>  
+  

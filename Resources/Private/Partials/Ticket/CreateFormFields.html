@@ -1,0 +1,130 @@
+{namespace p=PimentRouge\Pimentrougetickets\ViewHelpers}
+
+<f:form.hidden name="newTicket[status]" value="{settings.defaultTicketStatus}" />
+<f:form.hidden name="newTicket[admin]" value="{settings.defaultAdminUid}" />
+
+<f:if condition="{group} == {settings.userGroup}">
+	<f:form.hidden name="newTicket[user]" value="{user.uid}" />
+</f:if>
+		
+<f:security.ifHasRole role="{settings.adminGroup}">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="select-outer form-group">
+				<label class="col-sm-12 ticket-control-label"><f:translate key="tx_pimentrougetickets_domain_model_ticket.customer" />
+					<span class="required">*</span>
+				</label>
+				<f:form.select class="ticket-form-control select-form-control" property="user" name="user" options="{client}" 
+  				optionLabelField="company" 
+  				optionValueField="uid"  />	
+			</div>
+		</div>
+		<div class="col-md-4">
+			<label for="notice" class="inline-left"><f:translate key="tx_pimentrougetickets.mail.send_customer" /></label><br />
+  		<f:form.checkbox class="inline-right" property="notice" value="1" />		
+		</div>
+	</div>
+</f:security.ifHasRole>		
+		
+<label class="col-sm-12 ticket-control-label"><f:translate key="tx_pimentrougetickets_domain_model_ticket.title" />
+<span class="required">*</span>	
+</label>
+	 
+<input placeholder="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.title')}"
+	required="required"
+	class="ticket-form-control" type="text" 
+	data-validation="length" 
+	data-validation-length="5-200"
+	data-validation-error-msg="{f:translate(key: 'tx_pimentrougetickets.error.required')}"
+	name="tx_pimentrougetickets_pimentrougetickets[newTicket][title]" value="" /><br />
+
+<label class="col-sm-12 ticket-control-label"><f:translate key="tx_pimentrougetickets_domain_model_ticket.project" />
+<span class="required">*</span>		
+</label>	
+
+<input placeholder="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.project')}"
+	required="required"
+	class="ticket-form-control" type="text" 
+	data-validation="length" 
+	data-validation-length="5-200"
+	data-validation-error-msg="{f:translate(key: 'tx_pimentrougetickets.error.required')}"
+	name="tx_pimentrougetickets_pimentrougetickets[newTicket][project]" value="" /><br />
+	
+<label class="col-sm-12 ticket-control-label"><f:translate key="tx_pimentrougetickets_domain_model_ticket.description" />
+<span class="required">*</span>		
+</label>			
+(<span id="pres-max-length">1000</span> {f:translate(key: 'tx_pimentrougetickets.error.characters_left')})	
+<textarea rows="4" placeholder="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.description')}" 
+	data-validation="length" 
+	data-validation-length="5-1000"
+	data-validation-error-msg="{f:translate(key: 'tx_pimentrougetickets.error.required')}"
+	id="description" class="ticket-form-control" 
+	name="tx_pimentrougetickets_pimentrougetickets[newTicket][description]">
+</textarea><br />
+
+<label for="image">
+	<f:translate key="tx_pimentrougetickets_domain_model_ticket.image" />
+</label><br />
+
+<input type="file" id="file-input" name="tx_pimentrougetickets_pimentrougetickets[newTicket][image]" 
+		 data-validation="mime size" 
+		 data-validation-allowing="jpg, png, gif, txt, pdf"  
+		 data-validation-max-size="2M" type="file"
+		 data-validation-error-msg-mime="{f:translate(key: 'tx_pimentrougetickets.error.you_can_upload')}">
+	<br />
+		 
+<f:if condition="{resource}">
+	<f:image id="image" class="img-responsive" image="{resource}" alt="" /><br />
+</f:if><br />
+
+<f:security.ifHasRole role="{settings.adminGroup}">
+	<label for="cost">
+		<f:translate key="tx_pimentrougetickets_domain_model_ticket.cost" />
+	</label><br />
+	<f:form.textfield property="cost" class="ticket-form-control" 
+		placeholder="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.cost')}" /><br />
+</f:security.ifHasRole>
+
+<f:security.ifHasRole role="{settings.adminGroup}">
+	<div class="row">
+		<div class="col-md-9">
+			<div class="select-outer form-group">
+				<label class="col-sm-12 ticket-control-label">
+					<f:translate key="tx_pimentrougetickets_domain_model_ticket.delegate_to_admin" />
+					<span class="required">*</span>
+				</label>
+  				
+  			<select class="ticket-form-control select-form-control" name="tx_pimentrougetickets_pimentrougetickets[newTicket][admin]">
+  				<f:for each="{admin}" as="employer">
+  					<option value="{employer.uid}">
+				  		{employer.firstName} {employer.lastName}  		
+  					</option>  				
+  				</f:for>
+  			</select>	
+  				
+			</div> 		
+		</div>
+		<div class="col-md-3">
+			<label for="private" class="inline-left"><f:translate key="tx_pimentrougetickets_domain_model_ticket.private" /></label><br />
+  		<f:form.checkbox class="inline-right" property="private" value="1" />		
+		</div>
+	</div>		
+</f:security.ifHasRole>
+
+<div class="select-outer form-group">
+<label class="col-sm-12 ticket-control-label"><f:translate key="tx_pimentrougetickets_domain_model_category" />
+	<span class="required">*</span>
+</label>
+<f:form.select class="ticket-form-control select-form-control" property="category" name="category" options="{category}" 
+  optionLabelField="title" 
+  optionValueField="uid"  />
+</div>  
+
+<div class="select-outer form-group">
+<label class="col-sm-12 ticket-control-label"><f:translate key="tx_pimentrougetickets_domain_model_priority" />
+	<span class="required">*</span>
+</label>
+<f:form.select class="ticket-form-control select-form-control" property="priority" name="priority" options="{priority}" 
+  optionLabelField="title" 
+  optionValueField="uid"  />
+</div> 

@@ -1,0 +1,23 @@
+      <thead>
+        <tr>
+          <th><f:translate key="tx_pimentrougetickets_domain_model_ticket.uid" /></th>
+          <th><f:translate key="tx_pimentrougetickets_domain_model_ticket.client" /></th> 
+          <th><f:translate key="tx_pimentrougetickets_domain_model_user.admin" /></th>          
+          <th><f:translate key="tx_pimentrougetickets_domain_model_ticket.title" /></th>          
+          
+          <f:security.ifHasRole role="{settings.userGroup}">
+          	<th><f:translate key="tx_pimentrougetickets_domain_model_ticket.project" /></th>  
+          </f:security.ifHasRole>
+          
+          <f:security.ifHasRole role="{settings.userGroup}">
+          	<th><f:translate key="tx_pimentrougetickets_domain_model_ticket.description" /></th>
+          </f:security.ifHasRole>
+               
+          <th><f:translate key="tx_pimentrougetickets_domain_model_ticket.category" /></th>          
+          <th><f:translate key="tx_pimentrougetickets_domain_model_ticket.priority" /></th>
+          <th><f:translate key="tx_pimentrougetickets_domain_model_ticket.cost" /></th>
+          <th><f:translate key="tx_pimentrougetickets_domain_model_ticket.crdate" /></th> 
+          <th><f:translate key="tx_pimentrougetickets_domain_model_ticket.edit" /></th>         
+          <th><f:translate key="tx_pimentrougetickets_domain_model_ticket.delete" /></th>
+        </tr>
+      </thead>

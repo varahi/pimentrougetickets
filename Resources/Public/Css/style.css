@@ -1,0 +1,271 @@
+/* Femanager */
+.main .tx-femanager {
+	margin: 0 auto;
+	width: 480px;
+}
+.input-block-level {
+	width: 100%;
+}
+.control-group {
+
+}
+.error {
+	
+}
+.alert-error {
+	background: #ff5c36;
+	color: #fff;
+}
+.alert-error .close,
+.modal-header .close {
+	color: #fff;
+	opacity: 1;
+}
+
+.tooltip {
+	padding: 5px;
+	font-size: 14px;
+}
+.modal-header {
+	background: #2196F3;
+	color: #fff;
+}
+/*.answer-text-area {
+	padding: 0 15px;
+}*/
+
+.alert {
+	margin: 15px 0 0 0;
+}
+.alert + .alert {
+	display: none;
+}
+.typo3-messages {
+	margin: 10px 0 10px 0;
+	padding: 0;
+}
+ul.typo3-messages li {
+	list-style: none;
+}
+ul.typo3-messages h4 {
+	
+}
+.create-ticket-button {
+	margin-left: 30px;
+}
+
+textarea.form-control {
+	max-height: 200px !important;
+}
+
+.answer-detail__img {
+	float: left;
+	margin: 0 10px 10px 0;
+}
+.ticket-detail__img img {
+	max-height: 400px;
+	width: auto;
+}
+
+.ticket-detail__download-link {
+	padding-top: 10px;
+}
+
+.ticket-detail__answers {
+	padding-top: 10px;
+}
+.ticket-detail__edit-fields {
+	margin-top: 20px;
+}
+.big-borer-icon {
+	padding: 10px;
+	width: 35px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-align: center;
+	/*margin-top: 10px;*/
+}
+.centered-cell {
+
+}
+.blue-color {
+	color: #337ab7;
+	border: 1px solid #337ab7;
+}
+.red-color {
+	color: #ff0000;	
+	border: 1px solid #ff0000;
+}
+.green-color {
+	border: 1px solid green;	
+	color: green;	
+}
+.green-badge {
+	position: relative;
+	top: -5px;
+	background: green;
+	font-size: 10px;
+}
+span.required {
+	color: #ff0000;
+	position: relative;
+	left: 5px;
+}
+
+.inline-left {
+	display: inline-block;
+	margin: 30px 0 0 0;
+}
+.inline-right {
+	position: relative;
+	top: -20px;
+	display: inline-block;
+	float: right;
+}
+/*
+.top-button-menu {
+	position: absolute;
+	margin: 75px 0 0 200px;
+	z-index: 10;
+}
+*/
+/*
+.modal-content,
+.modal-dialog {
+	z-index: 9999 !important;
+}
+*/
+
+#c6,
+.btn-inline-block {
+	display: inline-block;
+}
+.btn-inline-block {
+	margin-right: 15px;
+}
+.opened-btn {
+	background: #00adee;
+}
+.closed-btn {
+	background: #23408e;
+	border-color: #23408e;
+}
+.closed-btn:HOVER,
+.closed-btn:FOCUS {
+	background: #16327d;
+}
+table#tickets thead,
+table.ticket-list thead {
+	background: #231f20;
+	color: #fff;
+}
+.ticket-list {
+
+}
+h3.ticket-list_admin {
+	position: absolute;
+	margin: -2px 0 0 0;
+}
+
+
+.preview-img {
+	height:100px;
+	width:100px; 
+} 
+.cancel-button {
+	width: 100px;
+	margin: 10px 0;
+	/*float: right;
+	margin-right: 300px;*/
+}
+
+
+table a {
+	color: #16327d;
+}
+table.light-green tr td {
+	background: #ecf7e5 !important;
+}
+table.light-blue tr td {
+	background: #e6f7fe !important;
+}
+table.light-yellow tr td {
+	background: #fffed9 !important;
+}
+table.yellow,
+table.yellow tr td 	{
+	background: #fff980 !important;	
+}
+
+#fileupload {
+	
+}
+#fileupload .table-striped {
+	margin-bottom: -30px;
+}
+#fileupload .fileupload-buttonbar {
+	margin-bottom: -30px;
+}
+
+/*
+.ticket-detail__answers {
+	border: 1px solid #bdc0d1;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;	
+	padding: 10px;
+}
+*/
+
+/*
+body {
+  background: url(../Images/boxed_bg.png) repeat;
+}
+*/
+
+label.col-sm-12,
+label.control-label {
+	padding-left: 2px;	
+}
+
+.form-control,
+.ticket-form-control {
+	display: inline-block;
+  width: 100%;
+  padding: 6px 12px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);	
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.ticket-form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+.select-form-control {
+	margin-bottom: 5px;
+}
+
+
+.input-form-control input[type="text"]:focus, 
+.input-form-control input[type="password"]:focus, 
+.input-form-control input[type="email"]:focus, 
+.input-form-control input[type="url"]:focus, 
+.input-form-control textarea:focus{
+  border-color: red;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+  outline: 0 none;
+}

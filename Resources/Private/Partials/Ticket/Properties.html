@@ -1,0 +1,59 @@
+
+<table class="tx-pimentrougetickets" >
+	<tr>
+		<td>
+			<f:translate key="tx_pimentrougetickets_domain_model_ticket.title" />
+		</td>
+		<td>
+		{ticket.title}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_pimentrougetickets_domain_model_ticket.project" />
+		</td>
+		<td>
+		{ticket.project}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_pimentrougetickets_domain_model_ticket.description" />
+		</td>
+		<td>
+		{ticket.description}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_pimentrougetickets_domain_model_ticket.file" />
+		</td>
+		<td>
+				<a href="{ticket.file.originalResource.publicUrl}">
+					{ticket.file.originalResource.name}
+				</a>
+		</td>
+		Image
+		<td>
+				<a href="{ticket.image.originalResource.publicUrl}">
+					{ticket.image.originalResource.name}
+				</a>
+		</td>		
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_pimentrougetickets_domain_model_ticket.cost" />
+		</td>
+		<td>
+		{ticket.cost}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_pimentrougetickets_domain_model_ticket.date" />
+		</td>
+		<td>
+		{ticket.date -> f:format.date()}
+		</td>
+	</tr>
+</table>

@@ -1,0 +1,35 @@
+{namespace p=PimentRouge\Pimentrougetickets\ViewHelpers}
+
+<f:layout name="Default" />
+<f:section name="main">
+<f:flashMessages renderMode="div" />
+
+<h1 style="text-align: center;"><f:translate key="tx_pimentrougetickets_domain_model_ticket.my_opened_tickets" /></h1>
+
+<f:for each="{users}" as="user" key="number" iteration="itemIteration">
+	<f:cycle values="{0: 'white', 1: 'light-blue', 2: 'light-green', 3: 'light-yellow', 4: 'white', 5: 'yellow'}" as="color">
+	<h3 class="ticket-list_admin">{user.firstName} {user.lastName}</h3>
+	
+	<table id="" class="table table-striped table-bordered ticket-list {color}" width="100%" cellspacing="0">
+		<f:render partial="Ticket/Table/Header" arguments="{_all}" /> 
+      <tbody>
+      	<f:for each="{user.delegatedTicket}" as="ticket">  	   	      		
+      		<f:if condition="{ticket.private}">
+      			<f:then></f:then>
+      			<f:else>
+      				<f:if condition="{ticket.status.uid} == {settings.defaultTicketStatus}">
+      					<tr>
+      						<f:render partial="Ticket/Table/TicketList" arguments="{_all}" />      		
+      					</tr>      		
+      				</f:if>
+      			</f:else>
+      		</f:if>
+      	</f:for>    	              
+      </tbody>
+	</table>
+	<br /><br />
+	</f:cycle>
+</f:for>
+
+<f:render partial="Ticket/Modal/EventModal" arguments="{_all}" /> 
+</f:section>

@@ -1,0 +1,35 @@
+<f:layout name="Button" />
+<f:section name="main">
+<f:flashMessages renderMode="div" />
+  
+	<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModalNew', role : 'button', data-backdrop : 'static'}" 
+		additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user}'}" 
+		pageUid="{settings.newTicketPageUid}" class="btn btn-success btn-default btn-inline-block">	
+			<f:translate key="tx_pimentrougetickets_domain_model_ticket.create" />		
+	</f:link.page>	 
+	
+ <!-- Event Edit Modal -->
+<div id="myModalNew" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Event</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Loading...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                    	<f:translate key="tx_pimentrougetickets.modal.close" />
+                    </button>
+                </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- Event Edit modal -->			
+
+</f:section>

@@ -1,0 +1,50 @@
+
+config.tx_extbase {
+    persistence {
+ 		# Enable this if you need the reference index to be updated
+		# updateReferenceIndex = 1   
+        classes {
+            PimentRouge\Pimentrougetickets\Domain\Model\User {
+                mapping {
+                    tableName = fe_users
+										columns {
+											usergroup.mapOnProperty = usergroup
+										}
+                    #recordType = Tx_Devcompanycall_User
+                    recordType =
+                }
+            }            
+            PimentRouge\Pimentrougetickets\Domain\Model\FileReference {
+              mapping {
+              tableName = sys_file_reference
+							columns {
+									uid_local.mapOnProperty = originalFileIdentifier
+							}
+            }
+          } 
+            PimentRouge\Pimentrougetickets\Domain\Model\Answer {
+              mapping {
+              tableName = tx_pimentrougetickets_domain_model_answer
+							columns {
+									crdate.mapOnProperty = crdate
+							}
+            }
+          } 
+            PimentRouge\Pimentrougetickets\Domain\Model\Ticket {
+              mapping {
+              tableName = tx_pimentrougetickets_domain_model_ticket
+							columns {
+									tstamp.mapOnProperty = tstamp
+							}
+            }
+          }                     
+            
+                   
+    	}
+    }
+    
+  objects {
+    TYPO3\CMS\Extbase\Domain\Model\FileReference.className = PimentRouge\Pimentrougetickets\Domain\Model\FileReference
+  }    
+    
+}

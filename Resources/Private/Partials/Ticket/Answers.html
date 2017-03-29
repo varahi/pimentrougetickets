@@ -1,0 +1,38 @@
+<div class="panel-group" id="accordion">
+	<f:for each="{ticket.answer}" as="answer" key="number" iteration="itemIteration">
+		<f:if condition="{itemIteration.isFirst}">
+			<f:then>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#{number}">
+								<b>{answer.user.username}</b> - 
+								<f:format.crop maxCharacters="30" append="&nbsp;...">{answer.answer}</f:format.crop>
+								<f:format.date format="d.m.Y - H:i:s">{answer.crdate}</f:format.date>
+							</a>
+						</h4>
+					</div>
+					<div id="{number}" class="panel-collapse collapse in">			
+					<f:render partial="Answer/PanelBody" arguments="{_all}" />	
+					</div>
+				</div>
+			</f:then>
+			<f:else>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#{number}">
+								<b>{answer.user.username}</b> - 
+								<f:format.crop maxCharacters="30" append="&nbsp;...">{answer.answer}</f:format.crop>
+								<f:format.date format="d.m.Y - H:i:s">{answer.crdate}</f:format.date>
+							</a>
+						</h4>
+					</div>
+					<div id="{number}" class="panel-collapse collapse">			
+					<f:render partial="Answer/PanelBody" arguments="{_all}" />		
+					</div>
+				</div>
+			</f:else>
+		</f:if>
+	</f:for>
+</div>

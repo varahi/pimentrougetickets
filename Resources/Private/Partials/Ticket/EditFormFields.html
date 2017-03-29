@@ -1,0 +1,76 @@
+{namespace p=PimentRouge\Pimentrougetickets\ViewHelpers}
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="select-outer form-group">
+				<label class="col-sm-12 ticket-control-label"><f:translate key="tx_pimentrougetickets_domain_model_ticket.customer" />
+					<span class="required">*</span>
+				</label>
+				<f:form.select class="ticket-form-control select-form-control" property="user" name="user" options="{client}" 
+  				optionLabelField="company" 
+  				optionValueField="uid"  />	
+			</div>
+		</div>
+		<div class="col-md-6">
+			<label for="notice" class="inline-left"><f:translate key="tx_pimentrougetickets.mail.send_customer_on_update" /></label><br />
+  		<f:form.checkbox class="inline-right" property="notice" value="1" />		
+		</div>
+	</div>
+
+<label class="col-sm-12 control-label"><f:translate key="tx_pimentrougetickets_domain_model_ticket.title" /></label>
+<f:form.textfield property="title" class="form-control" required="required" 
+placeholder="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.title')}" /><br />
+
+<label class="col-sm-12 control-label"><f:translate key="tx_pimentrougetickets_domain_model_ticket.project" /></label>
+<f:form.textfield property="project" class="form-control"  /><br />
+
+<label class="col-sm-12 control-label"><f:translate key="tx_pimentrougetickets_domain_model_ticket.description" /></label>
+<f:form.textarea class="form-control"property="description" rows="4" 
+	placeholder="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.description')}" /><br />
+	
+<label class="col-sm-12 control-label"><f:translate key="tx_pimentrougetickets_domain_model_ticket.cost" /></label>
+	<f:form.textfield property="cost" class="form-control" 
+		placeholder="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.cost')}" /><br />
+
+<div class="select-outer form-group">
+<label class="col-sm-12 control-label"><f:translate key="tx_pimentrougetickets_domain_model_category" /></label>
+<f:form.select class="form-control" property="category" name="category" options="{category}" 
+  optionLabelField="title" 
+  optionValueField="uid"  />
+</div>  
+
+<div class="select-outer form-group">
+<label class="col-sm-12 control-label"><f:translate key="tx_pimentrougetickets_domain_model_priority" /></label>
+<f:form.select class="form-control" property="priority" name="priority" options="{priority}" 
+  optionLabelField="title" 
+  optionValueField="uid"  />
+</div> 
+
+	<div class="row">
+		<div class="col-md-9">
+			<div class="select-outer form-group">
+				<label class="col-sm-12 ticket-control-label">
+					<f:translate key="tx_pimentrougetickets_domain_model_ticket.delegate_to_admin" />
+					<span class="required">*</span>
+				</label>  
+ 				<f:form.select class="ticket-form-control select-form-control" property="admin" name="admin" options="{admin}" 
+  				optionLabelField="fullname" 
+  				optionValueField="uid"  /> 
+
+			</div> 		
+		</div>
+		<div class="col-md-3">
+			<label for="private" class="inline-left"><f:translate key="tx_pimentrougetickets_domain_model_ticket.private" /></label><br />
+  		<f:form.checkbox class="inline-right" property="private" value="1" />		
+		</div>
+	</div>
+	
+
+<f:security.ifHasRole role="{settings.adminGroup}">
+	<div class="select-outer form-group">
+		<label class="col-sm-12 control-label"><f:translate key="tx_pimentrougetickets_domain_model_status" /></label>
+		<f:form.select class="form-control" property="status" name="status" options="{status}" 
+  		optionLabelField="title" 
+  		optionValueField="uid"  />
+	</div>  
+</f:security.ifHasRole>  

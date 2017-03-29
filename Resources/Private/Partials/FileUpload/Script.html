@@ -1,0 +1,38 @@
+<script>
+$(document).ready(function(){
+    $('.preview-img[src=""]').hide();
+    $('.preview-img:not([src=""])').show();
+});
+
+function readURL(input) {
+  if (input.files && input.files[0]) {
+  	var reader = new FileReader();
+    	reader.onload = function (e) {
+      	$('#imagepreview').prop('src', e.target.result).show();
+      }
+     reader.readAsDataURL(input.files[0]);
+    }
+	}
+
+$("#file-input").change(function () {
+    readURL(this);
+    $('#imagepreview').show();
+});
+
+$("#file-input").click(function () { 
+    $('#imagepreview').attr('src','');
+    $('.cancel-button').addClass( "show" );   
+});
+
+$('#imagepreview').click(function(){
+    $('#file-input').replaceWith($('#file-input').clone(true));
+    $('#imagepreview').hide();
+});
+
+$('#cancel').click(function(e) {
+	$('#file-input').val("");
+	$('#imagepreview').attr("src","");
+  //$( "img.preview-img" ).addClass( "hide" );	
+	$('.preview-img[src=""]').hide();
+});       
+</script>

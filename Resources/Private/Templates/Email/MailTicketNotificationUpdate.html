@@ -1,0 +1,45 @@
+<f:layout name="Email" />
+<f:section name="main">
+
+<img src="http://sav.pimentrouge.fr/typo3conf/ext/tickets_site/Resources/Public/Images/logo.png" 
+alt="PimentRouge" style="background: #5C6BC0;" /><br />
+
+<h1>
+	<f:translate key="tx_pimentrougetickets_domain_model_ticket" extensionName="pimentrougetickets" /> # {ticket.uid} <f:translate key="tx_pimentrougetickets.mail.ticket_updated" extensionName="pimentrougetickets" />
+</h1>
+
+<f:if condition="{ticket.private}">
+	<h2><f:translate key="tx_pimentrougetickets.mail.ticket_is_private" extensionName="pimentrougetickets" /></h2>
+</f:if>
+
+<table>
+	<tbody>
+		<tr><td><h3><f:translate key="tx_pimentrougetickets.mail.user_info" extensionName="pimentrougetickets" /></h3></td><td></td></tr>
+		<tr><td><b><f:translate key="tx_pimentrougetickets.mail.user_id" extensionName="pimentrougetickets" /></b></td><td>{ticket.user.uid}</td></tr>
+		<tr><td><b><f:translate key="tx_pimentrougetickets.mail.user_username" extensionName="pimentrougetickets" /></b></td><td>{ticket.user.username}</td></tr>
+		<tr><td><b><f:translate key="tx_pimentrougetickets.mail.user_name" extensionName="pimentrougetickets" /></b></td><td>{ticket.user.name}</td></tr>
+		<tr><td><b><f:translate key="tx_pimentrougetickets.mail.user_first_name" extensionName="pimentrougetickets" /></b></td><td>{ticket.user.firstName}</td></tr>
+		<tr><td><b><f:translate key="tx_pimentrougetickets.mail.user_last_name" extensionName="pimentrougetickets" /></b></td><td>{ticket.user.lastName}</td></tr>
+		<tr><td><b><f:translate key="tx_pimentrougetickets.mail.user_email" extensionName="pimentrougetickets" /></b></td><td>{ticket.user.email}</td></tr>	    					
+ 	</tbody>
+</table>
+
+<table>
+	<tbody>
+		<tr><td><h3><f:translate key="tx_pimentrougetickets.mail.ticket_info" extensionName="pimentrougetickets" /></h3></td><td></td></tr>
+		<tr><td><b><f:translate key="tx_pimentrougetickets_domain_model_ticket.uid" extensionName="pimentrougetickets" /></b></td><td>{ticket.uid}</td></tr>	
+		<tr><td><b><f:translate key="tx_pimentrougetickets.mail.ticket_title" extensionName="pimentrougetickets" /></b></td><td>{ticket.title}</td></tr>	 
+		<tr><td><b><f:translate key="tx_pimentrougetickets.mail.ticket_project" extensionName="pimentrougetickets" /></b></td><td>{ticket.project}</td></tr>	 
+		<tr><td><b><f:translate key="tx_pimentrougetickets.mail.ticket_description" extensionName="pimentrougetickets" /></b></td><td>{ticket.description}</td></tr>	 
+		<tr><td><b><f:translate key="tx_pimentrougetickets.mail.ticket_category" extensionName="pimentrougetickets" /></b></td><td>{ticket.category.title}</td></tr>	
+		<tr><td><b><f:translate key="tx_pimentrougetickets.mail.ticket_priority" extensionName="pimentrougetickets" /></b></td><td>{ticket.priority.title}</td></tr>	    					
+		<tr><td><b><f:translate key="tx_pimentrougetickets_domain_model_ticket.status" extensionName="pimentrougetickets" /></b></td><td>{ticket.status.title}</td></tr>	
+ 		<tr><td><b><f:translate key="tx_pimentrougetickets_domain_model_ticket.delegate_to_admin" extensionName="pimentrougetickets" /></b></td><td>{ticket.admin.username}</td></tr>	
+		<tr><td><b><f:translate key="tx_pimentrougetickets.mail.admin_email" extensionName="pimentrougetickets" /></b></td><td>{ticket.admin.email}</td></tr>	
+ 	</tbody>
+</table>
+
+<br /><br />
+<f:translate key="tx_pimentrougetickets.mail.you_can_view_ticket" extensionName="pimentrougetickets" /> <a href="http://sav.pimentrouge.fr/tickets/">http://sav.pimentrouge.fr/tickets/</a>
+	
+</f:section>

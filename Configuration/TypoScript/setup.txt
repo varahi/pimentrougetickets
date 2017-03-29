@@ -1,0 +1,129 @@
+plugin.tx_pimentrougetickets {
+	mvc.callDefaultActionIfActionCantBeResolved = 1
+	settings {
+		# Email
+		createTicketSubject = {$plugin.tx_pimentrougetickets.settings.createTicketSubject}
+		createAnswerSubject = {$plugin.tx_pimentrougetickets.settings.createAnswerSubject}
+		updateTicketSubject = {$plugin.tx_pimentrougetickets.settings.updateTicketSubject}
+		deleteTicketSubject = {$plugin.tx_pimentrougetickets.settings.deleteTicketSubject}
+    fromEmail = {$plugin.tx_pimentrougetickets.settings.fromEmail}
+    toEmail = {$plugin.tx_pimentrougetickets.settings.toEmail}  
+
+		# Ticket Status
+		closedTicket = {$plugin.tx_pimentrougetickets.settings.closedTicket} 
+    defaultTicketStatus = {$plugin.tx_pimentrougetickets.settings.defaultTicketStatus} 
+    newTicketPageUid = {$plugin.tx_pimentrougetickets.settings.newTicketPageUid}     
+    
+    # User Group
+    adminGroup = {$plugin.tx_pimentrougetickets.settings.adminGroup} 
+    userGroup = {$plugin.tx_pimentrougetickets.settings.userGroup} 
+    defaultAdminUid = {$plugin.tx_pimentrougetickets.settings.defaultAdminUid} 	  
+	}
+	
+	view {
+		templateRootPaths.0 = {$plugin.tx_pimentrougetickets.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_pimentrougetickets.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_pimentrougetickets.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_pimentrougetickets.persistence.storagePid}		
+    PimentRouge\Pimentrougetickets\Domain\Model\Tikcet {
+        mapping {
+            tableName = tx_pimentrougetickets_domain_model_ticket
+            columns {
+                crdate.mapOnProperty = crdate
+            }
+        }
+    }
+    
+		
+	}
+}
+
+plugin.tx_pimentrougetickets._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-pimentrougetickets table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-pimentrougetickets table th {
+		font-weight:bold;
+	}
+
+	.tx-pimentrougetickets table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+#[globalVar = GP:tx_pimentrougetickets_pimentrougetickets|item > 0]
+#[global]
+
+// CDN Header
+page.headerData.113 >
+page.headerData.113 = TEXT
+page.headerData.113.value (
+	<link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css" media="all"> 
+	<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js" type="text/javascript"></script>
+)
+page.headerData.113 >
+
+page.includeCSS {
+  css_1_tx_pimentrougetickets = http://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css
+  css_10_tx_pimentrougetickets = EXT:pimentrougetickets/Resources/Public/Css/style.css
+  #css_20_tx_pimentrougetickets = EXT:pimentrougetickets/Resources/Public/Css/theme-default.min.css
+	css_20_tx_pimentrougetickets = http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.20/theme-default.min.css
+	
+	#css_30_tx_pimentrougetickets = EXT:pimentrougetickets/Resources/Public/Css/file-upload/jquery.fileupload.css
+	#css_31_tx_pimentrougetickets = EXT:pimentrougetickets/Resources/Public/Css/file-upload/jquery.fileupload-ui.css
+	
+	#css_100_tx_pimentrougetickets = EXT:pimentrougetickets/Resources/Public/Css/file-upload/jquery.fileupload-noscript.css
+	#css_101_tx_pimentrougetickets = EXT:pimentrougetickets/Resources/Public/Css/file-upload/jquery.fileupload-ui-noscript.css
+}
+page.includeJS {
+  js_20_tx_pimentrougetickets = http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.43/jquery.form-validator.min.js
+  #js_20_tx_pimentrougetickets = EXT:pimentrougetickets/Resources/Public/Javascript/jquery.form-validator.min.js
+	#js_12_tx_pimentrougetickets = EXT:pimentrougetickets/Resources/Public/Javascript/validator.min.js
+}
+page.includeJSFooter {
+  js_10_tx_pimentrougetickets = https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js
+  js_11_tx_pimentrougetickets = https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js
+  #js_12_tx_pimentrougetickets = EXT:pimentrougetickets/Resources/Public/Javascript/parsley.min.js
+  js_50_tx_pimentrougetickets = EXT:pimentrougetickets/Resources/Public/Javascript/script.js
+}
+
+# File Uload script
+/*
+page.includeJSFooter {
+  js_100_tx_pimentrougetickets = EXT:pimentrougetickets/Resources/Public/Javascript/file-upload/vendor/jquery.ui.widget.js
+	js_101_tx_pimentrougetickets = http://blueimp.github.io/JavaScript-Templates/js/tmpl.min.js
+	js_102_tx_pimentrougetickets = http://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js
+	js_103_tx_pimentrougetickets = EXT:pimentrougetickets/Resources/Public/Javascript/file-upload/jquery.iframe-transport.js
+	js_104_tx_pimentrougetickets = EXT:pimentrougetickets/Resources/Public/Javascript/file-upload/jquery.fileupload.js
+	js_105_tx_pimentrougetickets = EXT:pimentrougetickets/Resources/Public/Javascript/file-upload/jquery.fileupload-process.js
+	js_106_tx_pimentrougetickets = EXT:pimentrougetickets/Resources/Public/Javascript/file-upload/jquery.fileupload-image.js
+	#js_107_tx_pimentrougetickets = EXT:pimentrougetickets/Resources/Public/Javascript/file-upload/jquery.fileupload-audio.js
+	#js_108_tx_pimentrougetickets = EXT:pimentrougetickets/Resources/Public/Javascript/file-upload/jquery.fileupload-video.js	
+	js_109_tx_pimentrougetickets = EXT:pimentrougetickets/Resources/Public/Javascript/file-upload/jquery.fileupload-validate.js	
+	js_110_tx_pimentrougetickets = EXT:pimentrougetickets/Resources/Public/Javascript/file-upload/jquery.fileupload-ui.js
+	js_111_tx_pimentrougetickets = EXT:pimentrougetickets/Resources/Public/Javascript/file-upload/main.js		
+}
+*/

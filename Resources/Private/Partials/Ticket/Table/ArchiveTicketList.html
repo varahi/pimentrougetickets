@@ -1,0 +1,58 @@
+	<td data-expanded="true">  
+		<f:if condition="{ticket.uid}">
+				<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+				additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+				pageUid="{settings.detailPageUid}" class="modal-link">		
+         {ticket.uid}      
+         </f:link.page> 	
+			</f:if>    
+	</td>
+  <td>
+  	<f:if condition="{ticket.title}">
+			<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+			additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+			pageUid="{settings.detailPageUid}" class="modal-link">
+      	{ticket.title}
+      </f:link.page>  	
+  	</f:if>
+  </td>
+  <td>
+    <f:if condition="{ticket.project}">
+			<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+			additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+			pageUid="{settings.detailPageUid}" class="modal-link">
+      	{ticket.project}
+      </f:link.page>    
+    </f:if>
+  </td>
+  <td>
+		<f:if condition="{ticket.description}">
+			<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+			additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+			pageUid="{settings.detailPageUid}" class="modal-link">
+      <f:format.crop maxCharacters="50" append="&nbsp;...">{ticket.description}</f:format.crop>
+      </f:link.page>	
+		</f:if>
+  </td>
+  <td>
+		<f:if condition="{ticket.category}">
+			<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+			additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+			pageUid="{settings.detailPageUid}" class="modal-link">
+				{ticket.category.title}
+      </f:link.page>	
+		</f:if>
+  </td>
+  <td>
+  	<f:if condition="{ticket.category}">
+  	
+  	</f:if>
+  
+      {ticket.priority.title}
+    </td>   
+      
+    <td>
+    	<span class="list-date">
+      	<f:format.date format="d.m.Y - H:i:s">{ticket.date}</f:format.date>
+      </span>
+    </td>    

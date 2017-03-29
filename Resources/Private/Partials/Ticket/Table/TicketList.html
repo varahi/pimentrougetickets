@@ -1,0 +1,129 @@
+    <td>        
+				<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+				additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+				pageUid="{settings.detailPageUid}" class="modal-link" 
+				title="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.view_and_answer')}" rel="tooltip">		
+         {ticket.uid}
+         </f:link.page>   
+         
+         <f:if condition="{ticket.answer}">
+        	<span class="badge green-badge align-center" title="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.number_of_answers')}" rel="tooltip">
+        		{ticket.numberOfAnswers}
+        	</span>         
+         </f:if>                       
+     </td>
+    <td>        
+				<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+				additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+				pageUid="{settings.detailPageUid}" class="modal-link"
+				title="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.view_and_answer')}" rel="tooltip">		
+         {ticket.user.company}      
+         </f:link.page>          
+     </td>
+    <td>        
+				<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+				additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+				pageUid="{settings.detailPageUid}" class="modal-link"
+				title="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.view_and_answer')}" rel="tooltip">		
+         {ticket.admin.firstName} {ticket.admin.lastName}       
+         </f:link.page>          
+     </td>
+    <td>
+			<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+			additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+			pageUid="{settings.detailPageUid}" class="modal-link"
+			title="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.view_and_answer')}" rel="tooltip">
+      	<f:format.crop maxCharacters="50" append="&nbsp;...">{ticket.title}</f:format.crop>
+      </f:link.page>
+    </td>
+      
+    <f:if condition="{ticket.status.uid} == {settings.closedTicket}">
+    <td>
+			<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+			additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+			pageUid="{settings.detailPageUid}" class="modal-link"
+			title="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.view_and_answer')}" rel="tooltip">
+      	{ticket.project}
+      </f:link.page>
+    </td>
+    </f:if>
+    
+    <f:if condition="{ticket.status.uid} == {settings.closedTicket}">
+    <td>
+    <f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+			additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+			pageUid="{settings.detailPageUid}" class="modal-link"
+			title="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.view_and_answer')}" rel="tooltip">
+      	<f:format.crop maxCharacters="50" append="&nbsp;...">{ticket.description}</f:format.crop>
+     </f:link.page>
+    </td>
+    </f:if>
+
+    <f:if condition="{ticket.status.uid} == {settings.defaultTicketStatus}">
+    <td>
+			<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+			additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+			pageUid="{settings.detailPageUid}" class="modal-link"
+			title="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.view_and_answer')}" rel="tooltip">    
+      {ticket.category.title}
+      </f:link.page>
+    </td>    
+    </f:if>
+
+    <f:if condition="{ticket.status.uid} == {settings.defaultTicketStatus}">
+    <td>
+			<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+			additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+			pageUid="{settings.detailPageUid}" class="modal-link"
+			title="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.view_and_answer')}" rel="tooltip">    
+      {ticket.priority.title}
+      </f:link.page>
+    </td>    
+    </f:if>
+    
+    <td>
+			<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+			additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+			pageUid="{settings.detailPageUid}" class="modal-link"
+			title="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.view_and_answer')}" rel="tooltip"> 
+     	 {ticket.cost}
+      </f:link.page>
+    </td>
+    <td>
+			<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+			additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+			pageUid="{settings.detailPageUid}" class="modal-link"
+			title="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.view_and_answer')}" rel="tooltip">        
+    		<span class="list-date">
+      		<f:format.date format="d/m/Y">{ticket.createDate}</f:format.date>
+      	</span>
+      </f:link.page>
+    </td>   
+
+		<f:if condition="{ticket.status.uid} == {settings.closedTicket}">
+    <td>
+			<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+			additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+			pageUid="{settings.detailPageUid}" class="modal-link"
+			title="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.view_and_answer')}" rel="tooltip">        
+    		<span class="list-date">
+      		<f:format.date format="d/m/Y">{ticket.tstamp}</f:format.date>
+      	</span>
+      </f:link.page>
+    </td> 		
+		</f:if>
+
+    <td class="text-center centered-cell">  
+    	<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModalEdit', role : 'button', data-backdrop : 'static'}" 
+				additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+				pageUid="{settings.editPageUid}" class="modal-link">	  
+				<span class="glyphicon glyphicon-edit blue-color big-borer-icon" title="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.edit')}" rel="tooltip" ></span>
+			</f:link.page>	    
+    </td>
+    <td class="text-center centered-cell">
+    	<f:link.action action="delete" controller="Ticket" arguments="{ticket : ticket}"
+    	onclick="return confirm('{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.delete')}');">
+    		<span class="glyphicon glyphicon-remove red-color big-borer-icon" title="{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.delete')}" rel="tooltip" ></span>
+    	</f:link.action>
+    </td>       
+       

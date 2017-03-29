@@ -1,0 +1,14 @@
+						<div class="panel-body">
+							<f:if condition="{answer.image}">
+								<div class="ticket-detail__inf0-block ticket-detail__img answer-detail__img">
+									<f:image class="img-responsive" src="{answer.image.originalResource.originalFile.uid}" alt="" width="300c" />								
+								</div>
+							</f:if>	
+							<f:format.raw>{answer.answer}</f:format.raw>	
+							<f:if condition="{answer.image}">	
+								<div class="ticket-detail__download-link">
+									<b><f:translate key="tx_pimentrougetickets_domain_model_ticket.file_download" /></b>									
+									<a href="{answer.image.originalResource.publicUrl}" target="_blank">{answer.image.originalResource.originalFile.name}</a>						
+								</div>								
+							</f:if>					
+						</div>

@@ -1,0 +1,138 @@
+<T3DataStructure>
+   <meta>
+    <langDisable>1</langDisable>
+  </meta>
+  
+ <sheets>
+  <sDEF>
+   <ROOT>
+     <TCEforms>
+      <sheetTitle>LLL:EXT:pimentrougetickets/Resources/Private/Language/locallang_db.xlf:flexforms_general.settings</sheetTitle>
+     </TCEforms>
+     <type>array</type>
+     <el>
+          <!-- View -->
+          <switchableControllerActions>
+            <TCEforms>
+            <label>View Mode</label>
+            <onChange>reload</onChange>
+            <config>
+              <type>select</type>
+              <items>
+                <numIndex index="1">
+                  <numIndex index="0">LLL:EXT:pimentrougetickets/Resources/Private/Language/locallang_db.xlf:flexforms_general.tickets_list</numIndex>
+                  <numIndex index="1">User->ticketsList;User->profile;Ticket->new;Ticket->create;Ticket->list;Ticket->show;Ticket->update;Ticket->edit;Ticket->delete;Answer->create;Answer->createByAdmin;Answer->new;</numIndex>
+                </numIndex>
+                <numIndex index="2">
+                  <numIndex index="0">LLL:EXT:pimentrougetickets/Resources/Private/Language/locallang_db.xlf:flexforms_general.tickets_archive</numIndex>
+                  <numIndex index="1">User->archiveList;User->ticketsList;User->profile;Ticket->new;Ticket->create;Ticket->list;Ticket->show;Ticket->update;Ticket->edit;Ticket->delete;Answer->create;Answer->createByAdmin;Answer->new;</numIndex>
+                </numIndex>                                                 
+                <numIndex index="3">
+                  <numIndex index="0">LLL:EXT:pimentrougetickets/Resources/Private/Language/locallang_db.xlf:flexforms_general.show_ticket</numIndex>
+                  <numIndex index="1">Ticket->show;User->profile;Ticket->new;Ticket->create;Ticket->list;Ticket->update;Answer->create;Answer->createByAdmin;</numIndex>
+                </numIndex>  
+                <numIndex index="4">
+                  <numIndex index="0">LLL:EXT:pimentrougetickets/Resources/Private/Language/locallang_db.xlf:flexforms_general.edit_ticket</numIndex>
+                  <numIndex index="1">Ticket->edit;Ticket->show;User->profile;Ticket->new;Ticket->create;Ticket->list;Ticket->update;Answer->create;Answer->createByAdmin;</numIndex>
+                </numIndex>                                   
+                <numIndex index="5">
+                  <numIndex index="0">LLL:EXT:pimentrougetickets/Resources/Private/Language/locallang_db.xlf:flexforms_general.new_ticket</numIndex>
+                  <numIndex index="1">Ticket->new;Ticket->edit;Ticket->show;User->profile;Ticket->create;Ticket->createByAdmin;Ticket->list;Ticket->update;Answer->create;Answer->createByAdmin;</numIndex>
+                </numIndex>
+                <numIndex index="10">
+                  <numIndex index="0">LLL:EXT:pimentrougetickets/Resources/Private/Language/locallang_db.xlf:flexforms_general.tickets_list_admin</numIndex>
+                  <numIndex index="1">User->adminTicketsList;User->profile;Ticket->new;Ticket->create;Ticket->list;Ticket->show;Ticket->update;Ticket->edit;Ticket->delete;Answer->create;Answer->createByAdmin;Answer->new;</numIndex>
+                </numIndex>                             
+                <numIndex index="11">
+                  <numIndex index="0">LLL:EXT:pimentrougetickets/Resources/Private/Language/locallang_db.xlf:flexforms_general.private_tickets_list</numIndex>
+                  <numIndex index="1">Ticket->privateList;Ticket->new;Ticket->create;Ticket->list;Ticket->show;Ticket->update;Ticket->delete;Answer->new;Answer->create;Answer->createByAdmin;User->profile;User->ticketsList;</numIndex>
+                </numIndex> 
+                       
+                <numIndex index="20">
+                  <numIndex index="0">LLL:EXT:pimentrougetickets/Resources/Private/Language/locallang_db.xlf:flexforms_general.all_tickets_list</numIndex>
+                  <numIndex index="1">Ticket->list;Ticket->new;Ticket->create;Ticket->list;Ticket->show;Ticket->update;Ticket->delete;Answer->new;Answer->create;Answer->createByAdmin;User->profile;User->ticketsList;</numIndex>
+                </numIndex>                                                                         
+              </items>
+            </config>
+            </TCEforms>
+          </switchableControllerActions>
+   
+          <!-- PID Single Page -->
+          <settings.detailPageUid>
+            <TCEforms>
+              <label>LLL:EXT:pimentrougetickets/Resources/Private/Language/locallang_db.xlf:flexforms_general.detail_page</label>
+              <config>
+                <type>group</type>
+                <internal_type>db</internal_type>
+                <allowed>pages</allowed>
+                <size>1</size>
+                <maxitems>1</maxitems>
+                <minitems>0</minitems>
+                <show_thumbs>1</show_thumbs>
+                <wizards>
+                  <suggest>
+                    <type>suggest</type>
+                  </suggest>
+                </wizards>
+              </config>
+            </TCEforms>
+          </settings.detailPageUid>     
+
+          <!-- PID Edit Page -->
+          <settings.editPageUid>
+            <TCEforms>
+              <label>LLL:EXT:pimentrougetickets/Resources/Private/Language/locallang_db.xlf:flexforms_general.edit_page</label>
+              <config>
+                <type>group</type>
+                <internal_type>db</internal_type>
+                <allowed>pages</allowed>
+                <size>1</size>
+                <maxitems>1</maxitems>
+                <minitems>0</minitems>
+                <show_thumbs>1</show_thumbs>
+                <wizards>
+                  <suggest>
+                    <type>suggest</type>
+                  </suggest>
+                </wizards>
+              </config>
+            </TCEforms>
+          </settings.editPageUid> 
+          
+            <!-- PID Answer Page -->
+          <settings.answerPageUid>
+            <TCEforms>
+              <label>LLL:EXT:pimentrougetickets/Resources/Private/Language/locallang_db.xlf:flexforms_general.answer_page</label>
+              <config>
+                <type>group</type>
+                <internal_type>db</internal_type>
+                <allowed>pages</allowed>
+                <size>1</size>
+                <maxitems>1</maxitems>
+                <minitems>0</minitems>
+                <show_thumbs>1</show_thumbs>
+                <wizards>
+                  <suggest>
+                    <type>suggest</type>
+                  </suggest>
+                </wizards>
+              </config>
+            </TCEforms>
+          </settings.answerPageUid>                    
+          
+          <!-- Show Closed  -->
+					<settings.showClosedTickets>
+        		<TCEforms>
+        			<exclude>1</exclude>
+         			<label>LLL:EXT:pimentrougetickets/Resources/Private/Language/locallang_db.xlf:flexforms_general.show_closed</label>
+         				<config>
+          				<type>check</type>
+         				</config>
+        		</TCEforms>
+    			</settings.showClosedTickets>                             			                                            
+                    
+     </el>
+   </ROOT>
+  </sDEF>
+ </sheets>
+</T3DataStructure>

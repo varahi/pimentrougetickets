@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-04-28T09:44:49Z" product-name="pimentrougetickets">
+		<header/>
+		<body>
+			<trans-unit id="username.description">
+				<source>username</source>
+			</trans-unit>
+			<trans-unit id="email.description">
+				<source>email</source>
+			</trans-unit>
+			<trans-unit id="first_name.description">
+				<source>firstName</source>
+			</trans-unit>
+			<trans-unit id="last_name.description">
+				<source>lastName</source>
+			</trans-unit>
+			<trans-unit id="image.description">
+				<source>image</source>
+			</trans-unit>
+			<trans-unit id="ticket.description">
+				<source>ticket</source>
+			</trans-unit>
+			<trans-unit id="answer.description">
+				<source>answer</source>
+			</trans-unit>
+			<trans-unit id="message.description">
+				<source>message</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

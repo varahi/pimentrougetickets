@@ -1,0 +1,65 @@
+<f:layout name="Default" />
+<f:section name="main">
+<f:flashMessages />
+
+<div class="modal-content">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#10006;</button>
+			<h1><f:translate key="tx_pimentrougetickets_domain_model_ticket" /> # {ticket.uid}</h1>
+	</div>
+
+	<div class="modal-body">	
+		<h4>{ticket.title}</h4>
+		<f:render partial="Ticket/Detail" arguments="{_all}" />
+		
+	<f:security.ifHasRole role="{settings.adminGroup}">
+		<div class="ticket-detail__answers">
+			<f:if condition="{ticket.answer}">
+				<h4><f:translate key="tx_pimentrougetickets_domain_model_answer.answers" /></h4>	
+			</f:if>
+			<f:render partial="Ticket/Answers" arguments="{_all}" />		
+			<f:form  id="fileupload" action="createByAdmin" method="POST" enctype="multipart/form-data" name="newAnswer" 
+			controller="Answer" object="{newAnswer}" arguments="{user:user, ticket:ticket}">		
+					
+				<f:render partial="Answer/FormFields" arguments="{_all}" />
+				<f:form.submit class="btn btn-primary" value="{f:translate(key: 'tx_pimentrougetickets_domain_model_answer.create')}" />
+			</f:form>		
+		</div>
+	</f:security.ifHasRole>
+	
+	<f:security.ifHasRole role="{settings.userGroup}">
+		<f:if condition="{ticket.answer}">
+		
+			<div class="ticket-detail__answers">
+				<h4><f:translate key="tx_pimentrougetickets_domain_model_answer.answers" /></h4>	
+				<f:render partial="Ticket/Answers" arguments="{_all}" />		
+				
+				<f:if condition="{ticket.status.uid} == {settings.defaultTicketStatus}">
+					<f:form  id="fileupload" action="create" method="POST" enctype="multipart/form-data" name="newAnswer" 
+						controller="Answer" object="{newAnswer}" arguments="{user:user, ticket:ticket}">			
+							<f:render partial="Answer/FormFields" arguments="{_all}" />
+							<f:form.submit class="btn btn-primary" value="{f:translate(key: 'tx_pimentrougetickets_domain_model_answer.create')}" />
+					</f:form>	
+				</f:if>
+			</div>
+			
+		</f:if>
+	</f:security.ifHasRole>			
+	</div>
+	
+	<div class="modal-footer">
+ 		<button type="button" class="btn btn-default" data-dismiss="modal">
+ 			<f:translate key="tx_pimentrougetickets_domain_model_ticket.close" />
+ 		</button>
+	</div>
+</div>
+
+<script>
+  $.validate({
+	  form : '#fileupload',
+    modules : 'file',
+  });
+  $('#answer').restrictLength( $('#pres-max-length') );
+</script>
+
+</f:section>

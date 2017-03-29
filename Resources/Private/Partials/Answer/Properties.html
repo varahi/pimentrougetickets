@@ -1,0 +1,29 @@
+
+<table class="tx-pimentrougetickets" >
+	<tr>
+		<td>
+			<f:translate key="tx_pimentrougetickets_domain_model_answer.title" />
+		</td>
+		<td>
+		{answer.title}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_pimentrougetickets_domain_model_answer.answer" />
+		</td>
+		<td>
+		{answer.answer}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_pimentrougetickets_domain_model_answer.file" />
+		</td>
+		<td>
+				<a href="{answer.file.originalResource.publicUrl}">
+					{answer.file.originalResource.name}
+				</a>
+		</td>
+	</tr>
+</table>

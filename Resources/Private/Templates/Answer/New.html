@@ -1,0 +1,22 @@
+
+<f:layout name="Default" />
+
+<f:section name="main">
+<h1>New Answer</h1>
+
+<f:flashMessages />
+
+<f:render partial="FormErrors" arguments="{object:Answer}" />
+
+<f:form action="create" method="POST" enctype="multipart/form-data" name="newAnswer" controller="Answer" object="{newAnswer}" 
+arguments="{user:user, ticket:ticket}">
+
+<input type="hidden" name="tx_pimentrougetickets_pimentrougetickets[newAnswer][ticket][status]" value="2" />
+	<label for="answer">
+		<f:translate key="tx_pimentrougetickets_domain_model_answer.answer" />
+	</label><br />
+	<f:form.textarea class="form-control" property="answer" cols="40" rows="5" /><br />
+
+	<f:form.submit value="Create new" />
+</f:form>
+</f:section>

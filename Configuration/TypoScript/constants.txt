@@ -1,0 +1,15 @@
+
+plugin.tx_pimentrougetickets {
+	view {
+		# cat=plugin.tx_pimentrougetickets_pimentrougetickets/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:pimentrougetickets/Resources/Private/Templates/
+		# cat=plugin.tx_pimentrougetickets_pimentrougetickets/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:pimentrougetickets/Resources/Private/Partials/
+		# cat=plugin.tx_pimentrougetickets_pimentrougetickets/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:pimentrougetickets/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_pimentrougetickets_pimentrougetickets//a; type=string; label=Default storage PID
+		storagePid = 2,4,6,7,8,31
+	}
+}

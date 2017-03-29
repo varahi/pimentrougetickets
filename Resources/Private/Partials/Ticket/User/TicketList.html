@@ -1,0 +1,51 @@
+    <td data-expanded="true">        
+				<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+				additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+				pageUid="{settings.detailPageUid}" class="modal-link">		
+         {ticket.uid}      
+         </f:link.page>          
+     </td>
+    <td>
+			<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+			additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+			pageUid="{settings.detailPageUid}" class="modal-link">
+      	{ticket.title}
+      </f:link.page>
+    </td>
+    <td>
+			<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModal', role : 'button'}" 
+			additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+			pageUid="{settings.detailPageUid}" class="modal-link">
+      	{ticket.project}
+      </f:link.page>
+    </td>
+    <td>
+      <f:format.crop maxCharacters="50" append="&nbsp;...">{ticket.description}</f:format.crop>
+    </td>
+    <td>
+      {ticket.priority.title}
+    </td>   
+    
+    <!-- <td>
+      {ticket.cost}
+    </td> -->
+      
+    <td>
+    	<span class="list-date">
+      	<f:format.date format="d.m.Y - H:i:s">{ticket.date}</f:format.date>
+      </span>
+    </td>    
+    <td>
+			<f:link.page additionalAttributes="{data-toggle : 'modal', data-target : '#myModalEdit', role : 'button', data-backdrop : 'static'}" 
+				additionalParams="{tx_pimentrougetickets_pimentrougetickets: '{user : user, ticket : ticket}'}" 
+				pageUid="{settings.editPageUid}" class="modal-link">	    	
+    		<f:translate key="tx_pimentrougetickets_domain_model_ticket.edit" />
+		</f:link.page>
+
+    </td>
+    <td>
+    	<f:link.action action="delete" controller="Ticket" arguments="{user : user, ticket : ticket}"
+    	onclick="return confirm('{f:translate(key: 'tx_pimentrougetickets_domain_model_ticket.delete')}');">
+    		<f:translate key="tx_pimentrougetickets_domain_model_ticket.delete" />
+    	</f:link.action>
+    </td> 
